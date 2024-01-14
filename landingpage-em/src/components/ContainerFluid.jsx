@@ -4,56 +4,78 @@ import {
   Stat,
   StatLabel,
   StatNumber,
-  StatGroup,
+  SimpleGrid,
   Image,
   Center,
 } from "@chakra-ui/react";
-// Import your icons from any icon library you prefer
 import { FaStore, FaUsers, FaStar, FaAward } from "react-icons/fa";
 
 const StatisticsComponent = () => {
   return (
     <Center bgGradient="linear(to bottom, #E9D8FB, #EDF2F7)">
       <Box
-        width={"75%"}
+        width={{ base: "100%", md: "75%" }}
         bgGradient="linear(to-r, purple.300, purple.600)"
         p={10}
         borderRadius="full"
         color="white"
         d="flex"
+        flexDirection="column"
         justifyContent="space-around"
         alignItems="center"
       >
-        <StatGroup>
-          <Stat textAlign="center">
+        <SimpleGrid columns={{ base: 2, md: 4 }} spacing={8} width="100%">
+          <Stat>
             <Center>
-              <Image as={FaStore} boxSize="50px" mb={4} />
+              <Image
+                as={FaStore}
+                boxSize={{ base: "30px", md: "100px" }}
+                mb={4}
+              />
             </Center>
-            <StatNumber>320+</StatNumber>
-            <StatLabel>Retail Stores</StatLabel>
+            <StatNumber fontSize={{ base: "xl", md: "2xl" }}>320+</StatNumber>
+            <StatLabel fontSize={{ base: "sm", md: "md" }}>
+              Retail Stores
+            </StatLabel>
           </Stat>
-          <Stat textAlign="center">
+          <Stat>
             <Center>
-              <Image as={FaUsers} boxSize="50px" mb={4} />
-            </Center>{" "}
-            <StatNumber>92k</StatNumber>
-            <StatLabel>Customers</StatLabel>
+              <Image
+                as={FaUsers}
+                boxSize={{ base: "30px", md: "100px" }}
+                mb={4}
+              />
+            </Center>
+            <StatNumber fontSize={{ base: "xl", md: "2xl" }}>92k</StatNumber>
+            <StatLabel fontSize={{ base: "sm", md: "md" }}>Customers</StatLabel>
           </Stat>
-          <Stat textAlign="center">
+          <Stat>
             <Center>
-              <Image as={FaStar} boxSize="50px" mb={4} />
-            </Center>{" "}
-            <StatNumber>5k</StatNumber>
-            <StatLabel>Positive Ratings</StatLabel>
+              <Image
+                as={FaStar}
+                boxSize={{ base: "30px", md: "100px" }}
+                mb={4}
+              />
+            </Center>
+            <StatNumber fontSize={{ base: "xl", md: "2xl" }}>5k</StatNumber>
+            <StatLabel fontSize={{ base: "sm", md: "md" }}>
+              Positive Ratings
+            </StatLabel>
           </Stat>
-          <Stat textAlign="center">
+          <Stat>
             <Center>
-              <Image as={FaAward} boxSize="50px" mb={4} />
-            </Center>{" "}
-            <StatNumber>20+</StatNumber>
-            <StatLabel>Award Winning</StatLabel>
+              <Image
+                as={FaAward}
+                boxSize={{ base: "30px", md: "100px" }}
+                mb={4}
+              />
+            </Center>
+            <StatNumber fontSize={{ base: "xl", md: "2xl" }}>20+</StatNumber>
+            <StatLabel fontSize={{ base: "sm", md: "md" }}>
+              Award Winning
+            </StatLabel>
           </Stat>
-        </StatGroup>
+        </SimpleGrid>
       </Box>
     </Center>
   );

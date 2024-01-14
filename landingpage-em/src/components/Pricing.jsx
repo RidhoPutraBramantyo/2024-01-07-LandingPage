@@ -27,6 +27,9 @@ const pricingPlans = [
       "Accept payments 24/7",
       "Free Support",
     ],
+    color1: "green.500",
+    color2: "green.500",
+    color3: "green.500",
   },
   {
     name: "Gold",
@@ -38,6 +41,9 @@ const pricingPlans = [
       "Accept payments 24/7",
       "Free Support",
     ],
+    color1: "green.500",
+    color2: "green.500",
+    color3: "green.500",
   },
   {
     name: "Bronze",
@@ -49,6 +55,9 @@ const pricingPlans = [
       "Accept payments 24/7",
       "Free Support",
     ],
+    color1: "green.500",
+    color2: "green.500",
+    color3: "green.500",
   },
 ];
 
@@ -80,7 +89,7 @@ const PricingCard = ({ plan }) => {
       <List spacing={3} textAlign="start" px={12}>
         {plan.features.map((feature, index) => (
           <ListItem key={index}>
-            <ListIcon as={CheckCircleIcon} color="green.500" />
+            <ListIcon as={CheckCircleIcon} color={plan.color1} />
             {feature}
           </ListItem>
         ))}
